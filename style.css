@@ -1,0 +1,133 @@
+.grid_container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+        "header header" 
+        "content sidebar" 
+        "footer footer";
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    gap: 20px;
+}
+
+header {
+    grid-area: header;
+    background-color: #ffc7ec; 
+    text-align: center;
+    padding: 1vw; 
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header > * {
+    margin: 1vw
+}
+
+.content {
+    grid-area: content;
+    background-color: #af4c4c; 
+    color: white;
+    text-align: center; 
+    padding: 20px;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #4caf74; 
+    color: black;
+    text-align: center;
+    padding: 20px;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer {
+    grid-area: footer;
+    background-color: #4168f4; 
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width:768px) {
+    .grid_container {
+        display: flex;
+        flex-direction: column;
+    }  
+}
+
+.background-fade {
+    opacity: .5;
+}
+
+h1 {
+    text-shadow: -2px 2px 5px rgba(8, 0, 255, 0.665);
+}
+
+button {
+    background-color: rgb(246, 255, 0);
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    font-weight: 900;
+    font-size: 1.5vw;
+    padding: 1vw;
+    margin: 1vw;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: rgb(0, 251, 255);
+}
+
+button:focus {
+    animation: grow .5s ease forwards
+}
+
+@keyframes grow {
+    0%{
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+a {
+    color:rgb(72, 205, 232);
+    text-decoration: none;
+    transition: color .5s;
+}
+
+a:hover {
+    color: rgb(0, 0, 0);
+}
+
+img {
+    width: 20vw;
+    padding: 1.5vw;
+    animation: turnbabyturn 5s linear infinite;
+
+}
+
+@keyframes turnbabyturn {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
